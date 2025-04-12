@@ -14,6 +14,8 @@ Primitive Data Types
 /*
 Non-Primitive Data Type
 1.) object
+2.) Arrays
+3.) Functions
 */
 
 console.log(typeof null); //Output : object
