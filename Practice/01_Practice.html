@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: whitesmoke;">
+    <div class="Weekdays">
+        <div class="Days">Monday</div>
+        <div class="Days">Tuesday</div>
+        <div class="Days">Wednesday</div>
+        <div class="Days">Thursday</div>
+        <div class="Days">Friday</div>
+        <div class="Days">Saturday</div>
+        <div class="Days" style="display: none;">Sunday</div>
+    </div>
+</body>
+<script>
+    const weekdays = document.querySelector(".Weekdays");
+    console.log(weekdays);
+    const days = weekdays.children;
+    for (let day of days) 
+    {
+        console.log(day.innerText) // Why?? It is printing the sunday even the display is none, innerText should only log the content which is rendered on screen     
+    }
+    console.log(weekdays.firstElementChild);
+    
+</script>
+</html>

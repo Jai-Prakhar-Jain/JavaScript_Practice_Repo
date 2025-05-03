@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="Weekdays">
+        <li class="days">Monday</li>
+    </ul>
+</body>
+<script>
+    // const day = document.querySelector(".days");
+   function createNewDay(day) { // To Add A New Day
+     const newDay = document.createElement("li");
+     const dayName = document.createTextNode(`${day}`);
+     newDay.appendChild(dayName);
+     const weekdays = document.querySelector(".Weekdays");
+     weekdays.appendChild(newDay)
+   }
+   createNewDay("Tuesday");
+   createNewDay("Wednesday");
+   createNewDay("Thursday");
+   function editDay(dayName,dayNumber) {
+    const day = document.querySelector(`li:nth-child(${dayNumber})`);
+    const newDay = (document.createElement("li"));
+    newDay.appendChild(document.createTextNode(`${dayName}`));
+    day.replaceWith(newDay);
+   } 
+   editDay("Sunday",1);
+   editDay("Monday",2);
+   editDay("Tuesday",3);
+   editDay("Wednesday",4);
+
+   function removeDay(dayNumber)
+   {
+    const day = document.querySelector(`li:nth-child(${dayNumber})`)
+    day.remove();
+   }
+   removeDay(4);
+</script>
+</html>
