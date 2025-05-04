@@ -1,8 +1,8 @@
 const insert = document.querySelector("#insert");
-const messageNode = document.querySelector(".key");
-const message = messageNode.innerText;
+// const messageNode = document.querySelector(".key");
+// const message = messageNode.innerText;
 
-document.addEventListener("keypress", (event) => {
+window.addEventListener("keypress", (event) => {
   insert.innerHTML = `
   <div>
   <table>
