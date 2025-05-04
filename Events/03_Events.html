@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Namaste India!</h1>
+    <input type="button" value="START" id="start" />
+    <input type="button" value="STOP" id="stop" />
+</body>
+<script>
+    const startButton = document.querySelector("#start");
+    const stopButton = document.querySelector("#stop");
+
+    let startPrint;
+    startButton.addEventListener('click', (event) => {
+        startPrint = setInterval((myName) => {
+            console.log(`Hi ${myName} ${Date()}`);
+        }, 1000, "Jai");
+    })
+    stopButton.addEventListener('click', (event) => {
+        clearInterval(startPrint)
+    })
+</script>
+
+</html>

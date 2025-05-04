@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Friends!</h1>
+    <input type="button" value="STOP" id="stop" />
+</body>
+<script>
+    setTimeout(function () {
+        console.log("Good Night zzZ");
+    }, 2000);
+    const changeHeading = function () {
+        const heading = document.querySelector("h1");
+        heading.innerText = "Hola Amigos!";
+    };
+    const headingChange = setTimeout(changeHeading, 5000);
+
+    const stopButton = document.querySelector("#stop");
+    stopButton.addEventListener('click', (event) => {
+        clearInterval(headingChange);
+    })
+</script>
+
+</html>
