@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Click Here">
+
+</body>
+<script>
+    // const url = "https://api.github.com/users/Jai-Prakhar-Jain"
+    // const request = new XMLHttpRequest();
+    // request.onreadystatechange = function () {
+    //     console.log(request.readyState)
+    //     if (request.readyState === 4) {
+    //         const response = JSON.parse(this.responseText)
+    //         console.log(response.login);
+
+    //     }
+    // }
+    // request.open("GET", url);
+    // request.send();
+
+    document.querySelector("input").addEventListener('click', (event) => {
+        const url = "https://api.github.com/users/Jai-Prakhar-Jain"
+        const request = new XMLHttpRequest();
+        let response;
+        let image = document.createElement("img")
+        let userName = document.createElement("span")
+        request.onreadystatechange = () => {
+            console.log(request.readyState)
+            if (request.readyState === 4) {
+                response = JSON.parse(request.responseText)
+                image.setAttribute("src", response.avatar_url);
+                userName.innerText = response.login;
+                const div = document.createElement('div');
+                div.appendChild(image);
+                div.appendChild(userName);
+                document.querySelector('body').appendChild(div);
+            }
+        }
+        request.open("GET", url);
+        request.send();
+    })
+
+</script>
+
+</html>
